@@ -6,9 +6,4 @@ RUN apk --no-cache add curl \
 
 FROM alpine:3.12.1
 LABEL maintainer="ghilbut@gmail.com"
-RUN rm /bin/ping \
-       /bin/ping6 \
-       /sbin/route \
-       /usr/bin/wget
 COPY --from=build /usr/local/bin/argocd /usr/local/bin/argocd
-USER nobody
